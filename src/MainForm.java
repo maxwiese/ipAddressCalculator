@@ -583,7 +583,11 @@ public class MainForm extends javax.swing.JFrame {
 
     private void isClassIKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_isClassIKeyReleased
         if (evt.getKeyCode() == 10) {
-            String isClass = isClassI.getText();
+            String isClass = isClassI.getText().toUpperCase();
+            if (isClass.matches("[ABC]")) {
+                
+            
+            
             String[] ssnm = HandlingIp.getStandardSubnetMaskFromClass(isClass);
             String[] firstPrivateIp = HandlingIp.getFirstPrivateHostIp(isClass);
 
@@ -605,6 +609,7 @@ public class MainForm extends javax.swing.JFrame {
             myIpSegment2I.setText(firstPrivateIp[1]);
             myIpSegment3I.setText(firstPrivateIp[2]);
             myIpSegment4I.setText(firstPrivateIp[3]);
+            }
         }
     }//GEN-LAST:event_isClassIKeyReleased
 
