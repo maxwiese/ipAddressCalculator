@@ -20,6 +20,12 @@ public class HandlingIp {
         String[] ip_s = ip.toString().split("/")[1].split(Pattern.quote("."));
         return ip_s;
     }
+    
+    /**
+     * 
+     * @param isClass
+     * @return string[]
+     */
 
     public static String[] getFirstPrivateHostIp(String isClass) {
         String standard_ip = "";
@@ -180,6 +186,14 @@ public class HandlingIp {
     public static int getMaxHosts(int hostBits) {
         return (int) Math.pow(2.0, hostBits) - 2;
     }
+    
+    /**
+     * 
+     * @param minimalHosts
+     * @param isClass
+     * @return int
+     * @throws Exception 
+     */
 
     public static int hostsToMinimumHostBits(int minimalHosts, String isClass) throws Exception {
         int current = 0;
